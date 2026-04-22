@@ -1,4 +1,6 @@
-cat > ~/StudyDNA/vercel.json << 'EOF'
+cd ~/StudyDNA
+
+cat > vercel.json << 'EOF'
 {
   "version": 2,
   "builds": [
@@ -14,15 +16,9 @@ cat > ~/StudyDNA/vercel.json << 'EOF'
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "api/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/build/$1"
-    }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/server.js" },
+    { "source": "/(.*)", "destination": "/frontend/build/index.html" }
   ]
 }
 EOF
