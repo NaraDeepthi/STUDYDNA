@@ -193,3 +193,4 @@ app.listen(PORT, () => {
   console.log(`   GET  /api/analytics/insights - Get AI insights (NO AUTH NEEDED)`);
   console.log(`   GET  /api/health        - Health check\n`);
 });
+module.exports = app;
